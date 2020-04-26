@@ -25,7 +25,7 @@ animations = [ {
 extents = Vector2( 120, 240 )
 
 [node name="Car" type="KinematicBody2D"]
-position = Vector2( 502.152, 292.08 )
+position = Vector2( 5.61655, 16.851 )
 script = ExtResource( 1 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
@@ -36,6 +36,3 @@ playing = true
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
-
-[node name="camera" type="Camera2D" parent="."]
-current = true

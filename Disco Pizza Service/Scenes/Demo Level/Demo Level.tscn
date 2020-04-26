@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Car/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Car/PizzaCar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Enemys/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Geschoss/PizzaGeschoss.tscn" type="PackedScene" id=4]
 
 [node name="Demo Level" type="Node2D"]
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4, 58 )
+scale = Vector2( 1.89109, 1.53072 )
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
-position = Vector2( 206.703, 203.332 )
+position = Vector2( 207.078, 203.332 )
 rotation = 1.5708
 scale = Vector2( 0.540592, 0.540592 )
 
@@ -17,3 +20,11 @@ scale = Vector2( 0.540592, 0.540592 )
 position = Vector2( 320.164, 485.302 )
 rotation = 1.5708
 scale = Vector2( 0.145427, 0.145427 )
+
+[node name="PizzaGeschoss" parent="." instance=ExtResource( 4 )]
+position = Vector2( 237.08, 334.988 )
+
+[node name="Umrandung" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Umrandung"]
+polygon = PoolVector2Array( 2.51022, 3.50232, 1918.7, 3.50232, 2036.59, -90.8109, -3.83795, -93.5314, -161.631, 80.5851, -67.318, 1177.88, 2054.73, 1178.79, 2036.59, -89.904, 1919.61, 1.68848, 1920.51, 1088.1, -3.83795, 1080.85 )
