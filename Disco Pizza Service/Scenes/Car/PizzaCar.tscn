@@ -36,6 +36,3 @@ playing = true
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
-
-[node name="camera" type="Camera2D" parent="."]
-current = true

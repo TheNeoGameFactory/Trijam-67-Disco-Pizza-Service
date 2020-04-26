@@ -7,6 +7,8 @@
 [node name="Demo Level" type="Node2D"]
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4, 58 )
+scale = Vector2( 1.89109, 1.53072 )
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
 position = Vector2( 206.703, 203.332 )

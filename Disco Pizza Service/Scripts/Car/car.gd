@@ -15,8 +15,8 @@ func _ready():
 
 func get_input_axis():
 	var axis = Vector2.ZERO
-	axis.x = int(Input.is_action_pressed("car_throttle")) - int(Input.is_action_pressed("car_brake"))
-	axis.y = int(Input.is_action_pressed("car_right")) - int(Input.is_action_pressed("car_left"))
+	axis.x = int(Input.is_action_pressed("car_right")) - int(Input.is_action_pressed("car_left"))
+	axis.y = int(Input.is_action_pressed("car_down")) - int(Input.is_action_pressed("car_up"))
 	return axis.normalized()
 
 func apply_friction(amount):
