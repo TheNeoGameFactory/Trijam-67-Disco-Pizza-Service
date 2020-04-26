@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/Geschoss/Pizza.svg" type="Texture" id=1]
+[ext_resource path="res://scenes/Geschoss/PizzaGeschoss.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -44,12 +45,13 @@ animations = [ {
 radius = 22.4184
 
 [node name="PizzaGeschoss" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.504001, 0.501794 )
 frames = SubResource( 7 )
 animation = "Drehung"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

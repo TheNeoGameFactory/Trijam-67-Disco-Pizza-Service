@@ -34,16 +34,19 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 184, 200 )
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="Area2D"]
 position = Vector2( 0, 10 )
+collision_layer = 4
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 2 )
 frames = SubResource( 5 )
 animation = "Walk"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
