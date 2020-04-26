@@ -19,5 +19,6 @@ func _process(delta):
 
 func _on_Barrikade_body_entered(body):
 	if body.get_name() == "Car":
+		get_parent().health-=1
 		queue_free()
 	pass # Replace with function body.

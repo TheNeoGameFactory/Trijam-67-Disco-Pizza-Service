@@ -14,15 +14,21 @@ signal schiesen_now
 signal farbaenderung_now
 
 
+var oftenBarrikade = 8
+var oftenGegner= 4
 
-func _ready():
-	read_notes("res://Music/Midi/barrikaden spawn_json.txt", notes_of_barrikaden_spawn, 1)
+
+func _readNotes():
+	read_notes("res://Music/Midi/barrikaden spawn_json.txt", notes_of_barrikaden_spawn, oftenBarrikade)
 	
 	read_notes("res://Music/Midi/farbaenderung_json.txt", notes_of_farbaenderung, 2)
 	
-	read_notes("res://Music/Midi/evtl gegner spawn_json.txt", notes_of_gegner_spawn, 1)
+	read_notes("res://Music/Midi/evtl gegner spawn_json.txt", notes_of_gegner_spawn, oftenGegner)
 	
-	read_notes("res://Music/Midi/schießen_json.txt", notes_of_schiesen, 2)
+	read_notes("res://Music/Midi/schießen_json.txt", notes_of_schiesen, 1)
+
+func _ready():
+	_readNotes()
 	print(notes_of_schiesen)
 
 func add_note_to_main_array(array, note):
@@ -79,3 +85,24 @@ func read_notes(notes_path, array_to_add, scip_notes):
 				add_note_to_main_array(array_to_add, note)
 				scip_notes_count = 0
 			scip_notes_count +=1
+
+
+func _on_AudioStreamPlayer_finished():
+	if oftenBarrikade>2:
+		oftenBarrikade-=1
+	if oftenGegner >=2:
+		oftenGegner-=1
+	_readNotes()
+	get_tree().get_root().get_node("main_level/Demo Level").health+=25
+	get_tree().get_root().get_node("main_level/Demo Level").increaseRoundLabel()
+	
+	var timer = Timer.new()
+	add_child(timer)
+	timer.set_one_shot(true)
+	timer.set_wait_time(3)
+	timer.connect("timeout", self, "_timer_callback")
+	timer.start()
+	pass # Replace with function body.
+	
+func _timer_callback():
+	$AudioStreamPlayer.play()
