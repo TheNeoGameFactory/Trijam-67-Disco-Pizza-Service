@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Disco Pizza Service"
+run/main_scene="res://scenes/Demo Level/Demo Level.tscn"
 config/icon="res://icon.png"
 
 [input]
