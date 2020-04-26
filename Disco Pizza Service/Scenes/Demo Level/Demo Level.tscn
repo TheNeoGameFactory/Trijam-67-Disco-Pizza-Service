@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Car/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Car/PizzaCar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Enemys/Enemy.tscn" type="PackedScene" id=3]
+
+[node name="Demo Level" type="Node2D"]
+
+[node name="Street" parent="." instance=ExtResource( 1 )]
+
+[node name="Car" parent="." instance=ExtResource( 2 )]
+position = Vector2( 206.703, 203.332 )
+rotation = 1.5708
+scale = Vector2( 0.540592, 0.540592 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 320.164, 485.302 )
+rotation = 1.5708
+scale = Vector2( 0.145427, 0.145427 )
