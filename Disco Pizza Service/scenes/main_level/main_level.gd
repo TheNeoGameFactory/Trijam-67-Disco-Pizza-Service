@@ -5,6 +5,7 @@ signal music_stoped
 signal music_started
 
 onready var pizzaGeschoss =preload("res://scenes/Geschoss/PizzaGeschoss.tscn")
+onready var gegner = preload("res://scenes/Enemys/Enemy.tscn")
 
 
 
@@ -31,8 +32,8 @@ func _on_sound_detectorplayer_farbaenderung_now():
 	pass
 
 func _on_sound_detectorplayer_gegner_spawn_now():
-	#$AnimationPlayer.play("blink_colorRect")
-	pass
+	var enemy = gegner.instance()
+	get_node("Demo Level").add_child(enemy)
 
 
 func _on_sound_detectorplayer_schiesen_now():

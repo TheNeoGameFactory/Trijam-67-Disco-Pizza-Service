@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=2]
 
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Demo Level/Demo Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Car/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Car/PizzaCar.tscn" type="PackedScene" id=2]
 
+
 [node name="Demo Level" type="Node2D"]
 position = Vector2( -8.04883, -2.01221 )
+script = ExtResource( 4 )
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4, 58 )
@@ -19,3 +23,14 @@ scale = Vector2( 0.540592, 0.540592 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Umrandung"]
 polygon = PoolVector2Array( 2.51022, 3.50232, 1918.7, 3.50232, 2036.59, -90.8109, -3.83795, -93.5314, -161.631, 80.5851, -67.318, 1177.88, 2054.73, 1178.79, 2036.59, -89.904, 1919.61, 1.68848, 1920.51, 1088.1, -3.83795, 1080.85 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 780.0
+margin_top = 53.0
+margin_right = 791.0
+margin_bottom = 68.0
+rect_scale = Vector2( 8, 8 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
