@@ -27,15 +27,17 @@ func apply_friction(amount):
 
 func apply_movement(acceleration):
 	motion += acceleration
-	motion.y *= 0.9
 	motion = motion.clamped(MAX_SPEED)
+	print (motion)
 
 func _physics_process(delta):
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
-		apply_friction(ACCELERATION * delta)
+		apply_friction(500 * delta)
 	else:
+		apply_friction(500 * delta)
 		apply_movement(axis * ACCELERATION  * delta)
+	
 #	if (motion.x < 1 && motion.x > -1):
 #		motion.y = motion.x
 	motion = move_and_slide(motion)

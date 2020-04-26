@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/Humans/Human.svg" type="Texture" id=1]
 
@@ -30,11 +30,18 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[node name="Enemy" type="Node2D"]
-position = Vector2( 474, 266 )
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 184, 200 )
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 0, 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 2 )
 frames = SubResource( 5 )
 animation = "Walk"
+frame = 1
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 6 )
