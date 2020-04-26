@@ -10,12 +10,14 @@ func _physics_process(delta):
 		apply_friction(ACCELERATION * delta)
 	else:
 		apply_movement(axis * ACCELERATION  * delta)
+	if (motion.x < 1 && motion.x > -1):
+		motion.y = 0
 	motion = move_and_slide(motion)
 
 func get_input_axis():
 	var axis = Vector2.ZERO
 	axis.x = int(Input.is_action_pressed("car_throttle")) - int(Input.is_action_pressed("car_brake"))
-	axis.y = int(Input.is_action_pressed("car_right")) - int(Input.is_action_pressed("car_left")) * 0.25
+	axis.y = int(Input.is_action_pressed("car_right")) - int(Input.is_action_pressed("car_left")) * 0.05
 	return axis.normalized()
 
 func apply_friction(amount):
@@ -26,4 +28,5 @@ func apply_friction(amount):
 
 func apply_movement(acceleration):
 	motion += acceleration
+	motion.y *= 0.9
 	motion = motion.clamped(MAX_SPEED)

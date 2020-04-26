@@ -6,4 +6,3 @@
 
 [node name="car" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128.606, 220.345 )
-rotation = 1.5708
