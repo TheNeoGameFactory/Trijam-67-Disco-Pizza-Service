@@ -41,5 +41,5 @@ func _on_sound_detectorplayer_schiesen_now():
 	var pizza = pizzaGeschoss.instance()
 	var origin = $"Demo Level/Car".position
 	add_child(pizza)
-	pizza.init(origin,get_local_mouse_position())
+	pizza.init(origin,get_global_mouse_position())
 	pass
