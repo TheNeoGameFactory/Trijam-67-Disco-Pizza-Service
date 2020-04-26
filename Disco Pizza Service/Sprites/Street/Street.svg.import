@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/car.png-170a7fd1acf62fa9823c196b91a33a8d.stex"
+path="res://.import/Street.svg-51ab9b3cf5ca81d96ce4e67514a649d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Car/car.png"
-dest_files=[ "res://.import/car.png-170a7fd1acf62fa9823c196b91a33a8d.stex" ]
+source_file="res://Sprites/Street/Street.svg"
+dest_files=[ "res://.import/Street.svg-51ab9b3cf5ca81d96ce4e67514a649d8.stex" ]
 
 [params]
 

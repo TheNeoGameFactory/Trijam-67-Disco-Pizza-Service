@@ -36,6 +36,6 @@ func _physics_process(delta):
 		apply_friction(ACCELERATION * delta)
 	else:
 		apply_movement(axis * ACCELERATION  * delta)
-	if (motion.x < 1 && motion.x > -1):
-		motion.y = motion.x
+#	if (motion.x < 1 && motion.x > -1):
+#		motion.y = motion.x
 	motion = move_and_slide(motion)
