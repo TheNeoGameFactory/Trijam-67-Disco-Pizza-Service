@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PizzaDiscoService-Game.ogg-f89852850304f6a37bd90d7519a8b59a.oggstr"
+
+[deps]
+
+source_file="res://Music/PizzaDiscoService-Game.ogg"
+dest_files=[ "res://.import/PizzaDiscoService-Game.ogg-f89852850304f6a37bd90d7519a8b59a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
